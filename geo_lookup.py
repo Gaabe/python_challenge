@@ -85,7 +85,6 @@ if __name__ == "__main__":
     file_path = sys.argv[1]
     ips = parse_ips(file_path)
     ips_data = {ip: {} for ip in ips}
-    ips_data = {k: ips_data[k] for k in list(ips_data)[0:95]}
     ips_data = geo_lookup(ips_data)
     ips_data = rdap_lookup(ips_data)
     print(ips_data)
